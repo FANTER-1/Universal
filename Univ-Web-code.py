@@ -1,5 +1,5 @@
                                                         config.py
-                                                        python
+                                                        
 
 import os
 
@@ -8,7 +8,7 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///app.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
                                                         run.py
-                                                        python
+                                                       
 
 from app import create_app
 
@@ -17,7 +17,7 @@ app = create_app()
 if __name__ == "__main__":
     app.run(debug=True)
                                                         app/__init__.py
-                                                        python
+                                                        
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -48,7 +48,7 @@ def create_app(config_class=Config):
 
 from app import models
                                                             app/models.py
-                                                            python
+                                                            
 
 from app import db, login
 from flask_login import UserMixin
@@ -70,7 +70,7 @@ class User(UserMixin, db.Model):
 def load_user(id):
     return User.query.get(int(id))
                                                     app/forms.py
-                                                    python
+                                                    
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
@@ -88,7 +88,7 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
                                                         app/routes/main.py
-                                                        python
+                                                        
 
 from flask import Blueprint, render_template
 
@@ -102,7 +102,7 @@ def index():
 def about():
     return render_template('about.html')
                                                             app/routes/auth.py
-                                                            python
+                                                           
 
 from flask import Blueprint, render_template, redirect, url_for, flash
 from flask_login import current_user, login_user, logout_user
@@ -146,7 +146,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
   
                                                       app/templates/base.html
-                                                      html
+                                                      
 
 <!DOCTYPE html>
 <html lang="en">
@@ -173,7 +173,7 @@ def register():
 </html>
 
                                                             app/templates/index.html
-                                                            html
+                                                           
 
 {% extends "base.html" %}
 
@@ -184,7 +184,7 @@ def register():
 {% endblock %}
 
                                                                 app/templates/about.html
-                                                                html
+                                                               
 
 {% extends "base.html" %}
 
@@ -196,7 +196,7 @@ def register():
 {% endblock %}
 
                                                                 app/templates/login.html
-                                                                html
+                                                                
 
 {% extends "base.html" %}
 
@@ -225,7 +225,7 @@ def register():
 {% endblock %}
 
                                         app/templates/register.html
-                                        html
+                                        
 
 {% extends "base.html" %}
 
@@ -268,7 +268,7 @@ def register():
 {% endblock %}
 
                                             app/static/style.css
-                                            css
+                                            
 
 body {
     font-family: Arial, sans-serif;
