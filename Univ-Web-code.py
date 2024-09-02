@@ -144,8 +144,9 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('auth.login'))
     return render_template('register.html', title='Register', form=form)
-                                                        app/templates/base.html
-                                                        html
+  
+                                                      app/templates/base.html
+                                                      html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -170,7 +171,7 @@ def register():
     </div>
 </body>
 </html>
-Run HTML
+
                                                             app/templates/index.html
                                                             html
 
@@ -181,7 +182,7 @@ Run HTML
 {% block content %}
 <h1>Welcome to My Web App</h1>
 {% endblock %}
-Run HTML
+
                                                                 app/templates/about.html
                                                                 html
 
@@ -193,10 +194,10 @@ Run HTML
 <h1>About Us</h1>
 <p>This is a simple Flask web application.</p>
 {% endblock %}
-Run HTML
-app/templates/login.html
-html
-Copy code
+
+                                                                app/templates/login.html
+                                                                html
+
 {% extends "base.html" %}
 
 {% block title %}Login{% endblock %}
@@ -265,7 +266,7 @@ Copy code
     <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}
-Run HTML
+
                                             app/static/style.css
                                             css
 
